@@ -1,5 +1,7 @@
 from decorator.ejemplo_decorator import *
-from fachada.
+from fachada.ejemplo_fachada import *
+from proxy.ejemplo_proxy import *
+from flyweight.ejemplo_flyweight import *
 
 
 class Handler:
@@ -17,8 +19,8 @@ class HandlerOptionOne(Handler):
 
     def handler_request(self, opt):
         if opt == 1:
-            print("Decorador")
             decorator = EjemploDecorator()
+            decorator.obtener_nombre()
             decorator.operacion()
         else:
             self.__succesor__.handler_request(opt)
@@ -28,7 +30,9 @@ class HandlerOptionTwo(Handler):
 
     def handler_request(self, opt):
         if opt == 2:
-            print("Lunes")
+            fachada = EjemploFachada()
+            fachada.obtener_nombre()
+            fachada.operacion()
         else:
             self.__succesor__.handler_request(opt)
 
@@ -37,7 +41,9 @@ class HandlerOptionThree(Handler):
 
     def handler_request(self, opt):
         if opt == 3:
-            print("Martes")
+            proxy = EjemploProxy()
+            proxy.obtener_nombre()
+            proxy.operacion()
         else:
             self.__succesor__.handler_request(opt)
 
@@ -46,7 +52,9 @@ class HandlerOptionFour(Handler):
 
     def handler_request(self, opt):
         if opt == 4:
-            print("Miercoles")
+            flyweight = EjemploFlyweight()
+            flyweight.obtener_nombre()
+            flyweight.operacion()
         else:
             self.__succesor__.handler_request(opt)
 
