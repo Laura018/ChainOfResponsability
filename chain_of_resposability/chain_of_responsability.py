@@ -2,6 +2,9 @@ from decorator.ejemplo_decorator import *
 from fachada.ejemplo_fachada import *
 from proxy.ejemplo_proxy import *
 from flyweight.ejemplo_flyweight import *
+from interpreter.ejemplo_interpreter import *
+from prototype.ejemplo_prototype import *
+from singleton.ejemplo_singleton import *
 
 
 class Handler:
@@ -63,7 +66,9 @@ class HandlerOptionFive(Handler):
 
     def handler_request(self, opt):
         if opt == 5:
-            print("Jueves")
+            interpreter = EjemploInterpreter()
+            interpreter.obtener_nombre()
+            interpreter.operacion()
         else:
             self.__succesor__.handler_request(opt)
 
@@ -72,7 +77,9 @@ class HandlerOptionSix(Handler):
 
     def handler_request(self, opt):
         if opt == 6:
-            print("Viernes")
+            prototype = EjemploPrototype()
+            prototype.obtener_nombre()
+            prototype.operacion()
         else:
             self.__succesor__.handler_request(opt)
 
@@ -81,7 +88,9 @@ class HandlerOptionSeven(Handler):
 
     def handler_request(self, opt):
         if opt == 7:
-            print("Sabado")
+            singleton = EjemploSingleton()
+            singleton.obtener_nombre()
+            singleton.operacion()
         else:
             self.__succesor__.handler_request(opt)
 

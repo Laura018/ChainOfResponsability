@@ -1,4 +1,11 @@
 from chain_of_resposability.ejemplo_cadena import *
 
-chain = EjemploCadena()
-chain.operacion()
+
+def main():
+    chain = EjemploCadena()
+    chain.obtener_nombre()
+    chain.operacion()
+
+
+if __name__ == "__main__":
+    main()
